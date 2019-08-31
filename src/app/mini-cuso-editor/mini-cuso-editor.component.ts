@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {MiniCursoService} from '../mini-curso.service';
 
 @Component({
   selector: 'app-mini-cuso-editor',
@@ -12,12 +13,19 @@ export class MiniCusoEditorComponent implements OnInit {
     nome: new FormControl(),
     dataRealizacao: new FormControl(),
     duracaoPrevista: new FormControl(),
-    vagasOfertadas: new FormControl()
+    totalVagas: new FormControl()
   });
 
-  constructor() { }
+  constructor(private miniCursoService: MiniCursoService) {
+  }
 
   ngOnInit() {
+  }
+
+  cadastrarMiniCurso() {
+    this.miniCursoService.cadastrarMiniCurso(this.miniCursoForm.value).subscribe((item: any) => {
+      console.log(item);
+    }, error => console.log(error));
   }
 
 }

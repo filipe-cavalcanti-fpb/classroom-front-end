@@ -1,3 +1,42 @@
-<p>
-  mini-cuso-editor works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="miniCursoForm" (ngSubmit)="cadastrarMiniCurso()">
+
+            <div class="form-group">
+              <label for="nomeInput">Nome </label>
+              <input class="form-control" formControlName="nome" id="nomeInput" placeholder="Nome" required="required"
+                     type="text">
+            </div>
+
+            <div class="form-group">
+              <label for="dataRealizacaoInput">Data de Realização</label>
+              <input class="form-control" id="dataRealizacaoInput" type="datetime-local" required="required" formControlName="dataRealizacao">
+            </div>
+
+            <div class="form-group">
+              <label for="duracaoPrevistaInput">Duração prevista</label>
+              <input class="form-control" id="duracaoPrevistaInput" type="number" required="required" formControlName="duracaoPrevista">
+            </div>
+
+             <div class="form-group">
+              <label for="vagasOfertadasInput">Vagas Ofertadas</label>
+              <input class="form-control" id="vagasOfertadasInput" type="number" required="required" formControlName="totalVagas">
+            </div>
+
+            <button [disabled]="!miniCursoForm.valid" class="btn btn-primary" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+  </div>
+ {{miniCursoForm.value | json}}
+</div>

@@ -3,11 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {AngularFontAwesomeModule} from 'angular-font-awesome';
-import {ReactiveFormsModule} from '@angular/forms';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ProfessorEditorComponent } from './professor-editor/professor-editor.component';
 import { ParticipanteEditorComponent } from './participante-editor/participante-editor.component';
 import { MiniCusoEditorComponent } from './mini-cuso-editor/mini-cuso-editor.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MiniCusoEditorComponent } from './mini-cuso-editor/mini-cuso-editor.com
     BrowserModule,
     AppRoutingModule,
     AngularFontAwesomeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
