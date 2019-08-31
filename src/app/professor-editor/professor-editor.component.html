@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body">
+          <form [formGroup]="professorForm">
+            <div class="form-group">
+              <label for="professorEmailInput">Email </label>
+              <input aria-describedby="emailHelp" class="form-control" formControlName="email" id="professorEmailInput"
+                     placeholder="Email" required="required" type="email">
+            </div>
+
+            <div class="form-group">
+              <label for="professorNomeInput"> Nome </label>
+              <input class="form-control" formControlName="nome" id="professorNomeInput" placeholder="Nome" required="required"
+                     type="text">
+            </div>
+
+            <div class="form-group">
+              <label for="professorPasswordInput"> Senha </label>
+              <input class="form-control" formControlName="senha" id="professorPasswordInput" placeholder="Senha"
+                     required="required" type="password">
+            </div>
+
+            <div class="form-group">
+              <label for="professorMatriculaInput">Matricula </label>
+              <input class="form-control" formControlName="matricula" id="professorMatriculaInput" placeholder="matricula"
+                     required="required" type="number">
+            </div>
+
+            <button [disabled]="!professorForm.valid" class="btn btn-primary" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
