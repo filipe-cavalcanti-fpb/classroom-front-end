@@ -9,13 +9,15 @@ import { ProfessorEditorComponent } from './professor-editor/professor-editor.co
 import { ParticipanteEditorComponent } from './participante-editor/participante-editor.component';
 import { MiniCusoEditorComponent } from './mini-cuso-editor/mini-cuso-editor.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MiniCusrsoListComponent } from './mini-cusrso-list/mini-cusrso-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfessorEditorComponent,
     ParticipanteEditorComponent,
-    MiniCusoEditorComponent
+    MiniCusoEditorComponent,
+    MiniCusrsoListComponent
   ],
   imports: [
     BrowserModule,

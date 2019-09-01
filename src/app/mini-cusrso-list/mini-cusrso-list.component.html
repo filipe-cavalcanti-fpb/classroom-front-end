@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nome</th>
+      <th scope="col">Data Realização</th>
+      <th scope="col">duração</th>
+      <th scope="col">professor</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let miniCurso of miniCursos">
+      <td>{{miniCurso.nome}}</td>
+      <td>{{miniCurso.dataRealizacao | date}}</td>
+      <td>{{miniCurso.duracao}}h</td>
+      <td>{{miniCurso.professor.nome}}</td>
+      <td><button class="btn btn-primary" (click)="inscreverParticipanteMiniCurso(miniCurso.id)" >Inscrever-se</button></td>
+    </tr>
+  </tbody>
+</table>
