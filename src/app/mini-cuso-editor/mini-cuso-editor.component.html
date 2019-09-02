@@ -26,6 +26,14 @@
               <input class="form-control" id="vagasOfertadasInput" type="number" required="required" formControlName="totalVagas">
             </div>
 
+            <div class="form-group">
+              <label for="selectProfessor"></label>
+              <select id="selectProfessor" class="form-control" formControlName="idProfessor">
+                <option [ngValue]="null">Selecione o professor</option>
+                <option *ngFor="let professor of professores" [ngValue]="professor.id" >{{professor.nome}}</option>
+              </select>
+            </div>
+
             <button [disabled]="!miniCursoForm.valid" class="btn btn-primary" type="submit">Sign in</button>
           </form>
         </div>

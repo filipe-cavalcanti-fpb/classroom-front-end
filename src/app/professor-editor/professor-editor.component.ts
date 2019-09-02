@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormArray, FormControl, FormGroup} from '@angular/forms';
+import {ProfessorService} from "../professor.service";
 
 @Component({
   selector: 'app-professor-editor',
@@ -12,12 +13,18 @@ export class ProfessorEditorComponent implements OnInit {
       nome: new FormControl(),
       matricula: new FormControl(),
       email: new FormControl(),
-      senha: new FormControl()
+      senha: new FormControl(),
+      telefones: new FormControl()
     });
 
-  constructor() { }
+  constructor(private professorService: ProfessorService) { }
 
   ngOnInit() {
+  }
+
+  cadastrarProfessor(): void {
+    this.professorService.cadastrarProfessor(this.professorForm.value).subscribe((item : any) => alert(),
+      error => console.log(error));
   }
 
 }

@@ -3,17 +3,24 @@
     <div class="col-lg-6">
       <div class="card">
         <div class="card-body">
-          <form [formGroup]="professorForm">
+          <form [formGroup]="professorForm" (ngSubmit)="cadastrarProfessor()">
             <div class="form-group">
               <label for="professorEmailInput">Email </label>
               <input aria-describedby="emailHelp" class="form-control" formControlName="email" id="professorEmailInput"
                      placeholder="Email" required="required" type="email">
             </div>
 
+
+
             <div class="form-group">
               <label for="professorNomeInput"> Nome </label>
               <input class="form-control" formControlName="nome" id="professorNomeInput" placeholder="Nome" required="required"
                      type="text">
+            </div>
+
+            <div class="form-group">
+              <label for="telefonesInput">Telefone</label>
+              <input class="form-control" formControlName="telefones" id="telefonesInput" type="text" placeholder="(99) 9 9999-9999">
             </div>
 
             <div class="form-group">
